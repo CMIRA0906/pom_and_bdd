@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Pruebas Login">
+	<test name="Login Exitoso">
+		<classes>
+			<class name="test.LoginFallidoTest"></class>
+		</classes>
+	</test>
+		<test name="Login Exitoso">
+		<classes>
+			<class name="test.LoginExitosoTest"></class>
+		</classes>
+	</test>
+		
+	<test name="Login Fallido Campo usuario vacio">
+		<classes>
+			<class name="test.LoginFallidoSinUsuarioTest"></class>
+		</classes>
+	</test>
+
+
+</suite>
