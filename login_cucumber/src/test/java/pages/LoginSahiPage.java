@@ -140,11 +140,12 @@ public class LoginSahiPage {
 		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //		this.driver=driver;
-		PageFactory.initElements(driver, this);	
+		PageFactory.initElements(driver,this);	
 		driver.get("http://sahitest.com/demo/training/login.htm");
+		
 	}
 	
 	public String getTituloPaginaActual(){

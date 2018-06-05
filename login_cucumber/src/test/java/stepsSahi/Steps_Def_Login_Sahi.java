@@ -1,8 +1,12 @@
 package stepsSahi;
 
 
+
 import org.junit.Assert;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -14,16 +18,30 @@ public class Steps_Def_Login_Sahi{
 			
 	LoginSahiPage login = new LoginSahiPage();
 	
-	@Given("^El navegador desplegado")
-	public void abrir_navegador() throws Exception{
+	@Before
+	public void  abrir_navegadorBefore(){
 		
 		login.abrirNavegador();
 	}
-	@When("^Yo ingrese las credenciales \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void ingresarUsuario(String usuario, String clave){
+	
+	@Given("^El navegador desplegado")
+	public void abrir_navegador() throws Exception{
 		
-		login.setUser(usuario);
-		login.setPassword(clave);
+//		login.abrirNavegador();
+		System.out.println("Ya no hago nada");
+	}
+	//formato antiguo
+	//@When("^Yo ingrese las credenciales \"([^\"]*)\" and \"([^\"]*)\"$")
+	//@When("^Yo ingrese las credencialesen Loqin")
+	@When("^Yo ingrese las credenciales en Login ([^\"]*) and ([^\"]*)$")
+	public void ingresarUsuario(String userName, String password){
+		
+	//	List<List<String>> datos = table.raw();
+		//System.out.println(datos.get(1).get(1));
+		
+		login.setUser(userName);
+		
+		login.setPassword(password);
 	}
 	
 	@And("^De clic en el boton Aceptar")
@@ -40,8 +58,16 @@ public class Steps_Def_Login_Sahi{
 		
 		System.out.println("Este es el titulo: "+tituloPage);
 		
-		login.cerrarNavegador();
 		
+		
+		
+	}
+	
+	@After
+	public void cerrarNavegador(Scenario scenario){
+		
+		System.out.println("Este es el escenario "+scenario.getName());
+		login.cerrarNavegador();
 		
 	}
 	
