@@ -154,11 +154,14 @@ public class LoginSahiPage {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-		
+		//options.addArguments("--headless");
+		//iniciar la pg maximizada
+		options.addArguments("start-maximized");
+		//Se deshabilita la barra info
+		options.addArguments("disable-infobars");
 		driver = new ChromeDriver(options);
 //		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //		this.driver=driver;
