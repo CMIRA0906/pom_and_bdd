@@ -1,4 +1,4 @@
-package stepsSahi;
+package stepsDefinition;
 
 import org.junit.Assert;
 
