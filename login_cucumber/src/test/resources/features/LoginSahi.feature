@@ -3,9 +3,8 @@ Esta Feature contiene la especificacion de la funcionalidad Login
 de la aplicación SahiDemo
 	
 Scenario Outline: Login Exitoso
-Given El navegador desplegado
-When Yo ingrese las credenciales en Login <userName> and <Password>
-And De clic en el boton Aceptar
+Given Que estoy en la interfaz de login del sitio web sahitest
+When Ingrese las credenciales en Login <userName> and <Password>
 And Verficar que la pagina desplegada sea "Books"
 
 Examples:
